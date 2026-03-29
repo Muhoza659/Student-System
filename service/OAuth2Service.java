@@ -59,7 +59,7 @@ public class OAuth2Service {
                     newStudent.setEmail(email);
                     newStudent.setFirstName(firstName);
                     newStudent.setLastName(lastName);
-                    newStudent.setPassword("OAUTH2_" + provider.toUpperCase());
+                    newStudent.setPassword("OAUTH2_NO_PASSWORD");
                     newStudent.setDateOfBirth(LocalDate.of(2000, 1, 1));
                     newStudent.setRole(Role.STUDENT);
                     return studentRepo.save(newStudent);

@@ -1,5 +1,6 @@
 package org.example.studentsystem.DTO;
 
+import jakarta.persistence.Column;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -24,7 +25,7 @@ public class StudentsRequestDTO {
         @NotBlank(message = "Email is required")
         private String email;
 
-        @NotBlank(message = "Password is required")
+        @Column(nullable = true)
         private String password;
 
         @NotNull(message = "Date of birth is required")

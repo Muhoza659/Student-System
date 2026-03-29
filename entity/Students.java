@@ -32,7 +32,7 @@ public class Students {
     @Column(unique = true)
     private String email;
 
-    @NotBlank(message="Password is required")
+    @Column(nullable = true)
     private String password;
 
     @NotNull(message="Date of birth is required")

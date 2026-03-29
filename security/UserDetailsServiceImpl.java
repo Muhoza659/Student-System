@@ -27,7 +27,11 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         Role role = student.getRole() != null
                 ? student.getRole()
                 : Role.STUDENT;
+        String password = student.getPassword();
+        if (password == null || password.startsWith("OAUTH2_")) {
+            password = "{noop}OAUTH2_NO_PASSWORD";
 
+        }
         return User.builder()
                 .username(student.getEmail())
                 .password(student.getPassword())
